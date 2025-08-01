@@ -34,7 +34,6 @@ header {
 }
 
 .menu {
-  list-style: none;
   display: flex;
   gap: 20px;
 }
@@ -85,7 +84,7 @@ section {
 }
 
 .sobre, .servicos, .contato {
-  background-color: #fdfdfd;
+  background-color: #f5f5f5;
 }
 
 h2 {
