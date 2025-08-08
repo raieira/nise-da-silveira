@@ -18,6 +18,10 @@ def sobre():
 def contato():
     return render_template("contato.html")
 
+@app.route("/nisesilveira")
+def nisesilveira():
+    return render_template("nisesilveira.html")
+
 
 if __name__ == "__main__":
     app.run(debug=True)
