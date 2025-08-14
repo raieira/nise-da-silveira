@@ -7,20 +7,48 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-    <h1>Sobre a Clinica</h1>
+
+   <header>
+    <div class="container">
+      <h1 class="logo">Nise da Silveira</h1>
       <nav>
         <ul class="menu">
           <li><a href="{{ url_for('nisesilveira') }}">Inicio</a></li>
-          <li><a href="{{ url_for('sobre') }}">Sobre</a></li>
           <li><a href="{{ url_for('servicos') }}">Serviços</a></li>
           <li><a href="{{ url_for('contato') }}">Contato</a></li>
         </ul>
       </nav>
-    <p>A Clínica é um centro especializado em saúde mental, dedicado ao cuidado humanizado, ético e individualizado de cada paciente. Oferecemos atendimento para transtornos como depressão, ansiedade, bipolaridade, dependência química, entre outros, sempre com foco no bem-estar e na recuperação integral do indivíduo.
+    </div>
+   </header>
 
-    Contamos com uma equipe multidisciplinar experiente — formada por psiquiatras, psicólogos, terapeutas e profissionais de apoio — que trabalha de forma integrada para garantir um tratamento completo, seguro e acolhedor.
-
-    Nosso ambiente foi projetado para proporcionar conforto, privacidade e confiança, tanto para os pacientes quanto para seus familiares..</p>
+    <h1>Sobre a Clinica</h1>
+      
+    <div class="texto-sobre">
+       <p>A Clínica é um centro especializado em saúde mental, dedicado ao cuidado humanizado, ético e individualizado de cada paciente.</li>
+          Oferecemos atendimento para transtornos como depressão, ansiedade, bipolaridade, dependência química, entre outros, sempre com foco no bem-estar e na recuperação integral do indivíduo.<br>
+ 
+           Contamos com uma equipe multidisciplinar experiente formada por;<br>
+           
+             <ul>
+              <li>psiquiatras;</li> 
+              <li>psicólogos</li> 
+              <li>terapeutas</li>
+              <li> profissionais de apoio</li> </li><br>
+            </Ul>
+           que trabalha de forma integrada para garantir um tratamento completo, seguro e acolhedor.<br>
+          Nosso ambiente foi projetado para proporcionar conforto, privacidade e confiança, tanto para os pacientes quanto para seus familiares...
+        
+      </p>
+    </div>
     
+
+   <footer>
+      <div class="container">
+        <p>@ 2025 Nise da Silveira - Psicóloga | Todos os direitos reservados.</p>
+       </div>
+   </footer>
+
+    <a href="https://wa.me/55879980789" class="whatsapp" target="_blank"><label for="mensagem"><i class="fa-solid fa-comment"></i>Mensagem
+   </label></a>
 </body>
 </html>
