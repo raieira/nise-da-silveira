@@ -1,25 +1,11 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Serviços</title>
-    
+{% extends "base.html" %}
 
-</head>
-<body>
-  <section class="servicos">
-    <div class="container">
-      <h2>Serviços</h2>
-      <ul>
-        <li>Atendimento Individual</li>
-        <li>Terapia de Casal</li>
-        <li>Psicoterapia Online</li>
-      </ul>
-    </div>
-  </section>
-
-
-    
-</body>
-</html>
+{% block content %}
+<h1>Serviços</h1>
+<ul>
+    <li>Terapia artística</li>
+    <li>Terapia ocupacional</li>
+    <li>Aconselhamento psicológico</li>
+</ul>
+<img src="{{ url_for('static', filename='imagens/servico1.jpg') }}" alt="Serviço">
+{% endblock %}
