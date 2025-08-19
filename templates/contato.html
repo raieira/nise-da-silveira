@@ -1,61 +1,24 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>contato</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-</head>
-<body>
-   <header>
-        <div class="container">
-          <h1 class="logo">Nise da Silveira</h1>
-          <nav>
-           <ul class="menu">
-            <li><a href="{{ url_for('sobre') }}">Sobre</a></li>
-            <li><a href="{{ url_for('servicos') }}">Serviços</a></li>
-            <li><a href="{{ url_for('contato') }}">Contato</a></li>
-            </ul>
-        </nav>
-     </div>
-    </header>
+{% extends "base.html" %}
 
+{% block content %}
+<h1>Contato</h1>
+<form method="POST">
+    <label for="nome">Nome:</label>
+    <input type="text" name="nome" id="nome" required>
 
-    <h1>Entre em contato</h1>
+    <label for="email">E-mail:</label>
+    <input type="email" name="email" id="email" required>
 
-    <form>
-        <label for="nome">Nome:</label><br>
-        <input type="text" id="nome" name="nome"><br><br>
+    <label for="mensagem">Mensagem:</label>
+    <textarea name="mensagem" id="mensagem" required></textarea>
 
-        <label for="email">E-mail:</label><br>
-        <input type="email" id="email" name="email"><br><br>
+    <button type="submit">Enviar</button>
+</form>
 
-        <label for="telefone">Telefone:</label><br>
-        <input type="tel" id="telefone" name="telefone"><br><br>
-
-        <label for="mensagem">Mensagem:</label><br>
-        <textarea id="mensagem" name="mensagem"></textarea><br><br>
-
-        <button type="submit">Enviar</button>
-    </form>
-
-    <h2>Informações de Contato</h2>
-    <p>Endereço: AV. Simoa Gomes 777, Garanhuns - PE</p>
-    <p>Telefone: (87) 1234-5678</p>
-    <p>Email: raieira02@gmail.com</p>
-
-    <p><a href="politica_privacidade.html">Política de Privacidade</a></p>
-    <center><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3941.986723613447!2d-36.485057!3d-8.880825600000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7070cdc12c6f16f%3A0x7395db411f76d942!2sSenac%20Garanhuns!5e0!3m2!1spt-BR!2sbr!4v1755217798565!5m2!1spt-BR!2sbr" width="600" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></center>
-
-
-    <footer>
-    <div class="container">
-      <p>@ 2025 Nise da Silveira - Psicóloga | Todos os direitos reservados.</p>
-    </div>
-   </footer>
-
-  <a href="https://wa.me/55879980789" class="whatsapp" target="_blank"><label for="mensagem"><i class="fa-solid fa-comment"></i>Mensagem
-  </label></a>
-    
-</body>
-</html>
+<h2>Endereço</h2>
+<p>Rua Exemplo, 123 - Recife, PE</p>
+<iframe 
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3936.123456789!2d-34.8798765!3d-8.0571234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7ab187c7f1a12345%3A0x123456789abcdef!2sRecife%2C+PE!5e0!3m2!1spt-BR!2sbr!4v1692481234567!5m2!1spt-BR!2sbr" 
+    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy">
+</iframe>
+{% endblock %}

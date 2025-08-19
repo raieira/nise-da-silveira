@@ -1,0 +1,14 @@
+body { font-family: Arial, sans-serif; margin:0; padding:0; }
+header { background: #6A5ACD; padding: 10px 0; }
+header nav ul { list-style:none; display:flex; justify-content:center; margin:0; padding:0; }
+header nav ul li { margin:0 15px; }
+header nav ul li a { color:white; text-decoration:none; font-weight:bold; }
+footer { text-align:center; padding:20px; background:#eee; margin-top:20px; }
+.flash { padding:10px; margin:10px; border-radius:5px; }
+.flash.success { background-color:#c8e6c9; color:#256029; }
+.flash.error { background-color:#ffcdd2; color:#b71c1c; }
+.banner { text-align:center; padding:50px; background-color:#f0f0f0; }
+.galeria img { width:200px; margin:10px; }
+form { display:flex; flex-direction:column; max-width:400px; margin:auto; }
+form input, form textarea { margin-bottom:10px; padding:5px; }
+form button { padding:10px; background:#6A5ACD; color:white; border:none; cursor:pointer; }
