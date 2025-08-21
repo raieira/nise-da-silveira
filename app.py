@@ -1,10 +1,10 @@
 from flask import Flask, render_template, request, redirect, url_for, flash
-from models import init_db, add_contato
+from models import salvar_contato
+from models import listar_contatos
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'change-this-secret'
 
-init_db()
 
 @app.route('/')
 def index():
@@ -26,18 +26,26 @@ def recursos():
 def blog():
     return render_template('blog.html', page_title='Blog')
 
-@app.route('/contato', methods=['GET', 'POST'])
+@app.route("/contato", methods=["GET", "POST"])
 def contato():
-    if request.method == 'POST':
-        nome = request.form.get('nome', '').strip()
-        email = request.form.get('email', '').strip()
-        mensagem = request.form.get('mensagem', '').strip()
+    if request.method == "POST":
+        nome = request.form["nome"]
+        email = request.form["email"]
+        mensagem = request.form["mensagem"]
+
         if not nome or not email or not mensagem:
-            flash('Por favor, preencha todos os campos.', 'error')
-            return redirect(url_for('contato'))
-        flash('Mensagem enviada com sucesso! Entraremos em contato em breve.', 'success')
-        return redirect(url_for('contato'))
-    return render_template('contato.html', page_title='Contato')
+            flash("Preencha todos os campos!", "error")
+        else:
+            salvar_contato(nome, email, mensagem)
+            flash("Mensagem enviada com sucesso!", "success")
+            return redirect(url_for("contato"))
+
+    return render_template("contato.html")
+
+@app.route("/admin/contatos")
+def admin_contatos():
+    contatos = listar_contatos()
+    return render_template("admin_contatos.html", contatos=contatos)
 
 if __name__ == '__main__':
     app.run(debug=True)

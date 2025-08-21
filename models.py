@@ -1,20 +1,27 @@
-import sqlite3
+from database import get_connection
 
-DB_NAME = 'clinica.db'
-
-def init_db():
-    conn = sqlite3.connect(DB_NAME)
+def salvar_contato(nome, email, mensagem):
+    conn = get_connection()
     cursor = conn.cursor()
-    cursor.execute('''
-        CREATE TABLE IF NOT EXISTS contatos (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            nome TEXT NOT NULL,
-            email TEXT NOT NULL,
-            mensagem TEXT NOT NULL
-        )
-    ''')
+
+    cursor.execute("""
+        INSERT INTO contatos (nome, email, mensagem)
+        VALUES (?, ?, ?)
+    """, (nome, email, mensagem))
+
     conn.commit()
     conn.close()
+
+def listar_contatos():
+    conn = get_connection()
+    cursor = conn.cursor()
+
+    cursor.execute("SELECT id, nome, email, mensagem, criado_em FROM contatos ORDER BY criado_em DESC")
+    contatos = cursor.fetchall()
+
+    conn.close()
+    return contatos
+
 
 def add_contato(nome, email, mensagem):
     conn = sqlite3.connect(DB_NAME)
