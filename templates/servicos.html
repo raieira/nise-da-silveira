@@ -1,25 +1,23 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Serviços</title>
-    
+{% extends "base.html" %}
 
-</head>
-<body>
-  <section class="servicos">
-    <div class="container">
-      <h2>Serviços</h2>
-      <ul>
-        <li>Atendimento Individual</li>
-        <li>Terapia de Casal</li>
-        <li>Psicoterapia Online</li>
-      </ul>
+{% block content %}
+<section class="section">
+  <div class="container">
+    <h2>Serviços</h2>
+    <div class="grid-3">
+      <article class="card">
+        <h3>Ateliês de Arte</h3>
+        <p>Pintura, desenho e modelagem como dispositivos de expressão e cuidado, inspirados na prática de Nise.</p>
+      </article>
+      <article class="card">
+        <h3>Terapia Ocupacional</h3>
+        <p>Construção de rotinas significativas e autonomia, com foco em vínculo e território.</p>
+      </article>
+      <article class="card">
+        <h3>Grupos e Vivências</h3>
+        <p>Encontros temáticos e atividades coletivas para redes de apoio e reinserção social.</p>
+      </article>
     </div>
-  </section>
-
-
-    
-</body>
-</html>
+  </div>
+</section>
+{% endblock %}
