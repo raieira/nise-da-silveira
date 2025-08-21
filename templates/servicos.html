@@ -1,11 +1,23 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Serviços</h1>
-<ul>
-    <li>Terapia artística</li>
-    <li>Terapia ocupacional</li>
-    <li>Aconselhamento psicológico</li>
-</ul>
-<img src="{{ url_for('') }}" alt="Serviço">
+<section class="section">
+  <div class="container">
+    <h2>Serviços</h2>
+    <div class="grid-3">
+      <article class="card">
+        <h3>Ateliês de Arte</h3>
+        <p>Pintura, desenho e modelagem como dispositivos de expressão e cuidado, inspirados na prática de Nise.</p>
+      </article>
+      <article class="card">
+        <h3>Terapia Ocupacional</h3>
+        <p>Construção de rotinas significativas e autonomia, com foco em vínculo e território.</p>
+      </article>
+      <article class="card">
+        <h3>Grupos e Vivências</h3>
+        <p>Encontros temáticos e atividades coletivas para redes de apoio e reinserção social.</p>
+      </article>
+    </div>
+  </div>
+</section>
 {% endblock %}
