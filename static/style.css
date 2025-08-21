@@ -115,7 +115,7 @@ body {
 .flash.error { background-color: #ffdada; color: #b71c1c; border-left: 6px solid #b71c1c; }
 
 
-.site-footer { margin-top: 40px; background: #f8f8fb; border-top: 1px solid #ececf5; padding: 28px 0; color: var(--ink-600); }
+.site-footer { margin-top: 40px; background: #f8f8fb; border-top: 1px solid #ececf5; padding: 28px 0; color: var(--ink-600); text-align: center; }
 .site-footer .muted { font-size: .92rem; color: var(--ink-500); margin-top: 6px; }
 
 @media (max-width: 980px) { .hero-inner { grid-template-columns: 1fr; } }
