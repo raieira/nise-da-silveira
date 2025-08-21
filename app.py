@@ -47,11 +47,6 @@ def admin_contatos():
     contatos = listar_contatos()
     return render_template("admin_contatos.html", contatos=contatos)
 
-<<<<<<< HEAD
-
 
 if __name__ == "__main__":
-=======
-if __name__ == '__main__':
->>>>>>> 7f463d1f7b7e739de5bb5f42b2220c0079c800fd
     app.run(debug=True)
