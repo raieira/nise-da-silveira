@@ -1,38 +1,58 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clínica Nise da Silveira</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+ <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{ page_title or "Clínica Terapêutica Nise da Silveira" }}</title>
+  <meta name="description" content="Site moderno inspirado na abordagem humanista de Nise da Silveira: arte, afeto e liberdade no cuidado em saúde mental." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <style>
+    :root {
+      --hero-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Nise_da_Silveira.tif/lossless-page1-250px-Nise_da_Silveira.tif.png');
+    }
+  </style>
+  <link rel="icon" href="{{ url_for('static', filename='assets/favicon.ico') }}" />
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="{{ url_for('index') }}">Inicial</a></li>
-                <li><a href="{{ url_for('sobre') }}">Sobre Nós</a></li>
-                <li><a href="{{ url_for('servicos') }}">Serviços</a></li>
-                <li><a href="{{ url_for('blog') }}">Blog</a></li>
-                <li><a href="{{ url_for('recursos') }}">Recursos</a></li>
-                <li><a href="{{ url_for('contato') }}">Contato</a></li>
-            </ul>
-        </nav>
-    </header>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="{{ url_for('index') }}">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-text">Clínica Nise da Silveira</span>
+      </a>
 
-    <main>
-        {% with messages = get_flashed_messages(with_categories=true) %}
-          {% if messages %}
-            {% for category, message in messages %}
-              <div class="flash {{ category }}">{{ message }}</div>
-            {% endfor %}
-          {% endif %}
-        {% endwith %}
-        {% block content %}{% endblock %}
-    </main>
+      <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="primary-nav">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      </button>
 
-    <footer>
-        <p>© 2025 Clínica Terapêutica Nise da Silveira</p>
-    </footer>
+      <nav id="primary-nav" class="nav">
+        <ul>
+          <li><a href="{{ url_for('index') }}">Início</a></li>
+          <li><a href="{{ url_for('sobre') }}">Sobre</a></li>
+          <li><a href="{{ url_for('servicos') }}">Serviços</a></li>
+          <li><a href="{{ url_for('recursos') }}">Recursos</a></li>
+          <li><a href="{{ url_for('blog') }}">Blog</a></li>
+          <li><a class="btn btn-primary" href="{{ url_for('contato') }}">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  {% include 'partials/flash.html' %}
+
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; {{ 2025 }} Clínica Nise da Silveira — Inspirada pela obra e legado humanista.</p>
+      <p class="muted">Conteúdo educativo e de divulgação. Não substitui acompanhamento profissional.</p>
+    </div>
+  </footer>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
