@@ -1,9 +1,20 @@
 {% extends "base.html" %}
 
 {% block content %}
-<section class="banner">
-    <h1>Bem-vindo à Clínica Nise da Silveira</h1>
-    <p>Arte e terapia para o cuidado da saúde mental.</p>
+<section class="hero">
+  <div class="container hero-inner">
+    <div class="hero-copy">
+      <h1>Nise da Silveira</h1>
+      <p>Psiquiatra brasileira (1905–1999) que revolucionou o cuidado em saúde mental ao promover a arte, a liberdade de expressão e vínculos afetivos, em oposição a métodos agressivos.</p>
+      <div class="cta-group">
+        <a class="btn btn-primary" href="{{ url_for('sobre') }}">Conheça o legado</a>
+        <a class="btn btn-ghost" href="{{ url_for('recursos') }}">Acesse recursos</a>
+      </div>
+    </div>
+    <div class="hero-media">
+      <div class="hero-image" role="img" aria-label="Retrato de Nise da Silveira"></div>
+    </div>
+  </div>
 </section>
 
 <section class="galeria">
