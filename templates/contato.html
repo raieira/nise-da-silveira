@@ -1,13 +1,21 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>contato</title>
-</head>
-<body>
-    <h1></h1>
-    <h2></h2>
-    
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block content %}
+<section class="section">
+  <div class="container narrow">
+    <h2>Contato</h2>
+    <form method="POST" action="{{ url_for('contato') }}" class="form" novalidate>
+      <label for="nome">Nome</label>
+      <input id="nome" name="nome" type="text" placeholder="Seu nome completo" required />
+
+      <label for="email">E-mail</label>
+      <input id="email" name="email" type="email" placeholder="seu@email.com" required />
+
+      <label for="mensagem">Mensagem</label>
+      <textarea id="mensagem" name="mensagem" rows="5" placeholder="Como podemos ajudar?" required></textarea>
+
+      <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
+  </div>
+</section>
+{% endblock %}

@@ -1,26 +1,36 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-</head>
-<body>
-    <h1>Sobre a Clinica</h1>
-      <nav>
-        <ul class="menu">
-          <li><a href="{{ url_for('nisesilveira') }}">Inicio</a></li>
-          <li><a href="{{ url_for('sobre') }}">Sobre</a></li>
-          <li><a href="{{ url_for('servicos') }}">Serviços</a></li>
-          <li><a href="{{ url_for('contato') }}">Contato</a></li>
+{% extends "base.html" %}
+
+{% block content %}
+<section class="section">
+  <div class="container narrow">
+    <h2>Sobre Nise da Silveira</h2>
+    <p><strong>Nise Magalhães da Silveira (Maceió, 15 de fevereiro de 1905 — Rio de Janeiro, 30 de outubro de 1999)</strong> foi médica psiquiatra brasileira, reconhecida por humanizar o cuidado e recusar procedimentos como eletrochoque e lobotomia. Seu trabalho articulou terapia ocupacional, expressão artística e afetividade.</p>
+    <p>Em 1946, no Centro Psiquiátrico Nacional Pedro II (Engenho de Dentro), criou ateliês de pintura e modelagem que deram origem ao <em>Museu de Imagens do Inconsciente</em> (1952), hoje com vasto acervo de obras realizadas por pacientes. Em 1956, fundou a <em>Casa das Palmeiras</em>, dedicada à reabilitação e reinserção social de ex-internos.</p>
+    <p>Influenciada pela psicologia analítica, manteve troca de cartas com <em>Carl Gustav Jung</em> a partir de 1954, estudando no Instituto Jung em Zurique (1957–58; 1961–62). Nise valorizou a potência simbólica das imagens para compreender experiências psíquicas e fortalecer vínculos.</p>
+    <p>Seu legado inspira políticas públicas, centros culturais e práticas clínicas em todo o Brasil, além de filmes e documentários que difundem sua obra.</p>
+
+    <div class="info-grid">
+      <div>
+        <h3>Principais marcos</h3>
+        <ul>
+          <li>1946: ateliês terapêuticos no Engenho de Dentro</li>
+          <li>1952: fundação do Museu de Imagens do Inconsciente</li>
+          <li>1956: criação da Casa das Palmeiras</li>
+          <li>1957: exposição em Zurique no II Congresso Mundial de Psiquiatria</li>
+          <li>2022: incluída no Livro dos Heróis e Heroínas da Pátria</li>
         </ul>
-      </nav>
-    <p>A Clínica é um centro especializado em saúde mental, dedicado ao cuidado humanizado, ético e individualizado de cada paciente. Oferecemos atendimento para transtornos como depressão, ansiedade, bipolaridade, dependência química, entre outros, sempre com foco no bem-estar e na recuperação integral do indivíduo.
-
-Contamos com uma equipe multidisciplinar experiente — formada por psiquiatras, psicólogos, terapeutas e profissionais de apoio — que trabalha de forma integrada para garantir um tratamento completo, seguro e acolhedor.
-
-Nosso ambiente foi projetado para proporcionar conforto, privacidade e confiança, tanto para os pacientes quanto para seus familiares..</p>
-    
-</body>
-</html>
+      </div>
+      <div>
+        <h3>Obras de referência</h3>
+        <ul>
+          <li><em>Imagens do Inconsciente</em> (1981)</li>
+          <li><em>Jung: vida e obra</em> (1968)</li>
+          <li><em>Casa das Palmeiras – A emoção de lidar</em> (1986)</li>
+          <li><em>Cartas a Spinoza</em> (1995)</li>
+          <li><em>Gatos – A emoção de lidar</em> (1998)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
