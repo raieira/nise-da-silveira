@@ -1,9 +1,3 @@
-
----
-
-## **2️⃣ database.py atualizado**
-
-```python
 import sqlite3
 
 def criar_conexao():
