@@ -1,24 +1,41 @@
+
+---
+
+## **2️⃣ database.py atualizado**
+
+```python
 import sqlite3
-from datetime import datetime
 
-DB_NAME = "clinica.db"
+def criar_conexao():
+    conn = sqlite3.connect('clinica.db')
+    return conn
 
-def get_connection():
-    return sqlite3.connect(DB_NAME)
-
-def init_db():
-    conn = get_connection()
+def criar_tabelas():
+    conn = criar_conexao()
     cursor = conn.cursor()
-
+    
     cursor.execute("""
-        CREATE TABLE IF NOT EXISTS contatos (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            nome TEXT NOT NULL,
-            email TEXT NOT NULL,
-            mensagem TEXT NOT NULL,
-            criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-        )
+    CREATE TABLE IF NOT EXISTS pacientes (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        nome TEXT NOT NULL,
+        idade INTEGER,
+        telefone TEXT
+    )
     """)
-
+    
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS atendimentos (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        paciente_id INTEGER,
+        data TEXT,
+        descricao TEXT,
+        FOREIGN KEY(paciente_id) REFERENCES pacientes(id)
+    )
+    """)
+    
     conn.commit()
     conn.close()
+
+if __name__ == "__main__":
+    criar_tabelas()
+    print("Banco de dados e tabelas criados com sucesso!")
