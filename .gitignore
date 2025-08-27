@@ -4,4 +4,4 @@ env
 clinica.db
 .db
 db/
-_pycache_
+__pycache__
