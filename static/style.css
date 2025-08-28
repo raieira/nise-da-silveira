@@ -19,6 +19,10 @@ img { max-width: 100%; display: block; }
   --radius: 16px;
 }
 
+
+
+
+
 body {
   font-family: "Inter","Segoe UI",Arial,sans-serif;
   font-size: 16px;
@@ -129,3 +133,47 @@ color: #FFE699; }
   .info-grid { grid-template-columns: 1fr; }
 }
 
+.resource-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.resource-item {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.resource-item a {
+  color: var(--brand-700);
+  text-decoration: none;
+  font-weight: 600;
+  position: relative;
+  z-index: 10;
+}
+
+.resource-item a:hover {
+  color: var(--brand-600);
+}
+
+.image-popup {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 105%;
+  width: 220px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  background: var(--surface);
+  padding: 6px;
+  z-index: 9;
+}
+
+.image-popup img {
+  width: 100%;
+  border-radius: var(--radius);
+}
+
+.resource-item a:hover + .image-popup {
+  display: block;
+}
