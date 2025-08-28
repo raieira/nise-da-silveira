@@ -5,13 +5,46 @@
   <div class="container narrow">
     <h2>Recursos</h2>
     <ul class="resource-list">
-      <div class="container">
-        <span><li><a href="https://pt.wikipedia.org/wiki/Nise_da_Silveira" target="_blank" rel="noopener">Biografia na Wikipédia (PT)</a></li> <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.travessa.com.br%2Fnise-da-silveira-caminhos-de-uma-psiquiatra-rebelde%2Fartigo%2F714db38a-f635-498e-8f45-2aed072148f5&psig=AOvVaw0GS81zHJagac2iIeKsRC5l&ust=1755905319640000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCNiK-r6HnY8DFQAAAAAdAAAAABAE" alt="Imagem exemplo" class="imagem"> </span> 
-      </div>
-      <li><a href="https://pt.wikipedia.org/wiki/Museu_de_Imagens_do_Inconsciente" target="_blank" rel="noopener">Museu de Imagens do Inconsciente</a></li>
-      <li><a href="https://pt.wikipedia.org/wiki/Casa_das_Palmeiras" target="_blank" rel="noopener">Casa das Palmeiras</a></li>
-      <li><a href="https://pt.wikipedia.org/wiki/Imagens_do_Inconsciente" target="_blank" rel="noopener">Documentário “Imagens do Inconsciente” (1988)</a></li>
-      <li><a href="https://pt.wikipedia.org/wiki/Nise%3A_O_Cora%C3%A7%C3%A3o_da_Loucura" target="_blank" rel="noopener">Filme “Nise – O Coração da Loucura” (2016)</a></li>
+      <li class="resource-item">
+        <a href="https://pt.wikipedia.org/wiki/Nise_da_Silveira" target="_blank" rel="noopener">
+          Biografia na Wikipédia (PT)
+        </a>
+        <div class="image-popup">
+          <img src="{{ url_for('static', filename='img/images.jpg') }}" alt="Nise da Silveira" />
+        </div>
+      </li>
+      <li class="resource-item">
+        <a href="https://pt.wikipedia.org/wiki/Museu_de_Imagens_do_Inconsciente" target="_blank" rel="noopener">
+          Museu de Imagens do Inconsciente
+        </a>
+        <div class="image-popup">
+          <img src="{{ url_for('static', filename='img/museu.jpg') }}" alt="Museu de Imagens do Inconsciente" />
+        </div>
+      </li>
+      <li class="resource-item">
+        <a href="https://pt.wikipedia.org/wiki/Casa_das_Palmeiras" target="_blank" rel="noopener">
+          Casa das Palmeiras
+        </a>
+        <div class="image-popup">
+          <img src="{{ url_for('static', filename='img/casa.jpg') }}" alt="Casa das Palmeiras" />
+        </div>
+      </li>
+      <li class="resource-item">
+        <a href="https://pt.wikipedia.org/wiki/Imagens_do_Inconsciente" target="_blank" rel="noopener">
+          Documentário “Imagens do Inconsciente” (1988)
+        </a>
+        <div class="image-popup">
+          <img src="{{ url_for('static', filename='img/inco.jpg') }}" alt="Documentário Imagens do Inconsciente" />
+        </div>
+      </li>
+      <li class="resource-item">
+        <a href="https://pt.wikipedia.org/wiki/Nise%3A_O_Cora%C3%A7%C3%A3o_da_Loucura" target="_blank" rel="noopener">
+          Filme “Nise – O Coração da Loucura” (2016)
+        </a>
+        <div class="image-popup">
+          <img src="{{ url_for('static', filename='img/Nise-_O_Coração_da_Loucura.jpg') }}" alt="Filme Nise – O Coração da Loucura" />
+        </div>
+      </li>
     </ul>
   </div>
 </section>

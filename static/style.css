@@ -44,7 +44,7 @@ body {
 
 .brand-text { color: #fff; font-weight: 700; letter-spacing: 0.2px; }
 
-.nav { display: flex; }
+.nav { display: flex;}
 .nav ul { list-style: none; display: flex; gap: 24px; align-items: center; margin: 0; padding: 0; }
 .nav a { color: #fff; text-decoration: none; font-weight: 600; transition: transform .2s ease, opacity .2s ease; }
 .nav a:hover { transform: translateY(-1px); opacity: .92;
@@ -128,4 +128,5 @@ color: #FFE699; }
   .grid-3 { grid-template-columns: 1fr; }
   .info-grid { grid-template-columns: 1fr; }
 }
+
 
